@@ -16,7 +16,7 @@
                     name="login"
                     label="Login"
                     type="text"
-                    v-model="model.username"
+                    v-model="model.email"
                   ></v-text-field>
                   <v-text-field
                     append-icon="lock"
@@ -61,7 +61,7 @@ export default {
   data: () => ({
     loading: false,
     model: {
-      username: "admin@example.com",
+      email: "admin@example.com",
       password: "password",
     },
   }),

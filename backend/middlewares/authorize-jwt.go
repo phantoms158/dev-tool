@@ -1,12 +1,12 @@
 package middlewares
 
 import (
+	"devtools-backend/services"
 	"fmt"
 	"net/http"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
-	"github.com/phantoms158/gin-bookstore/models"
 )
 
 func AuthorizeJWT() gin.HandlerFunc {
@@ -21,7 +21,7 @@ func AuthorizeJWT() gin.HandlerFunc {
 			return
 		}
 		tokenString := authHeader[len(BEARER_SCHEMA):]
-		token, err := models.ValidateToken(tokenString)
+		token, err := services.ValidateToken(tokenString)
 		if token.Valid {
 			claims := token.Claims.(jwt.MapClaims)
 			c.Set("user_data", claims)

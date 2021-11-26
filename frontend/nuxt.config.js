@@ -5,6 +5,9 @@ const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 
 module.exports = {
   mode: 'spa',
+  server: {
+    host: '0' // default: localhost
+  },
   // router: {
   // base: '/devstools.github.io/'
   // },
@@ -67,7 +70,7 @@ module.exports = {
   ],
 
   axios: {
-    baseURL: 'http://localhost:8080', // Used as fallback if no runtime config is provided
+    baseURL: 'http://192.168.70.245:8080/api/v1', // Used as fallback if no runtime config is provided
   },
   auth: {
     strategies: {
